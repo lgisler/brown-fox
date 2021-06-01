@@ -6,17 +6,13 @@ target_sources(BrownFox_BrownFox
         main.cc
 )
 
-target_include_directories(BrownFox_BrownFox
-    PRIVATE
-        ${CMAKE_CURRENT_LIST_DIR}
-)
-
 target_link_libraries(BrownFox_BrownFox
     PRIVATE
         BrownFox::Body
 )
 
 include(GNUInstallDirs)
+
 file(RELATIVE_PATH relDir
     ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}
     ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}
@@ -28,7 +24,6 @@ set_target_properties(BrownFox_BrownFox PROPERTIES
     INSTALL_RPATH "$ORIGIN;$ORIGIN/${relDir}"
 )
 
-include(GNUInstallDirs)
 install(TARGETS BrownFox_BrownFox
     EXPORT BrownFox_Apps
     COMPONENT BrownFox_Apps
