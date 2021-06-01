@@ -15,7 +15,7 @@ target_include_directories(BrownFox_Body
 )
 
 set_target_properties(BrownFox_Body PROPERTIES
-    OUTPUT_NAME BrownFox
+    OUTPUT_NAME Body
     EXPORT_NAME Body
 )
 
@@ -37,7 +37,7 @@ install(TARGETS BrownFox_Body
     COMPONENT BrownFox_Libs
 )
 
-install(DIRECTORY ${BrownFox_SOURCE_DIR}/include
+install(DIRECTORY ${BrownFox_SOURCE_DIR}/include/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING
     PATTERN *.h
