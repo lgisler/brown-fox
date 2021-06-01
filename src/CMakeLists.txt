@@ -31,11 +31,6 @@ set_target_properties(BrownFox_Body
 )
 
 include(GNUInstallDirs)
-install(TARGETS BrownFox_Body
-    EXPORT BrownFox_Libs
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/BrownFox
-    COMPONENT BrownFox_Libs
-)
 
 install(DIRECTORY ${BrownFox_SOURCE_DIR}/include/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
@@ -43,16 +38,15 @@ install(DIRECTORY ${BrownFox_SOURCE_DIR}/include/
     PATTERN *.h
 )
 
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    BrownFoxConfigVersion.cmake
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY ExactVersion
+install(TARGETS BrownFox_Body
+    EXPORT BrownFox_Libs
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/BrownFox
+    COMPONENT BrownFox_Libs
 )
 
-install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/BrownFoxConfigVersion.cmake"
+install(EXPORT BrownFox_Libs
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/BrownFox
+    NAMESPACE BrownFox::
+    FILE BrownFox_Libs.cmake
+    COMPONENT BrownFox_Libs
 )
-
-include(CPack)

@@ -28,3 +28,10 @@ install(TARGETS BrownFox_BrownFox
     EXPORT BrownFox_Apps
     COMPONENT BrownFox_Apps
 )
+
+install(EXPORT BrownFox_Apps
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/BrownFox
+    NAMESPACE BrownFox::
+    FILE BrownFox_Apps.cmake
+    COMPONENT BrownFox_Apps
+)

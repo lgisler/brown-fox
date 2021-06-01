@@ -16,20 +16,6 @@ endif()
 
 include(GNUInstallDirs)
 
-install(EXPORT BrownFox_Apps
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/BrownFox
-    NAMESPACE BrownFox::
-    FILE BrownFox_Apps.cmake
-    COMPONENT BrownFox_Apps
-)
-
-install(EXPORT BrownFox_Libs
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/BrownFox
-    NAMESPACE BrownFox::
-    FILE BrownFox_Libs.cmake
-    COMPONENT BrownFox_Libs
-)
-
 configure_file(
     ${BrownFox_SOURCE_DIR}/cmake/BrownFoxConfig.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/BrownFoxConfig.cmake
@@ -37,6 +23,18 @@ configure_file(
 )
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/BrownFoxConfig.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/BrownFox
+)
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+    BrownFoxConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY ExactVersion
+)
+
+install(
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/BrownFoxConfigVersion.cmake"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/BrownFox
 )
 
