@@ -9,7 +9,7 @@ add_subdirectory(src)
 
 add_subdirectory(app)
 
-if(TEST_BROWNFOX OR (CMAKE_SOURCE_DIR STREQUAL BrownFox_SOURCE_DIR))
+if(TEST_BROWNFOX OR (CMAKE_SOURCE_DIR STREQUAL BrownFox_SOURCE_DIR AND BUILD_TESTING))
     include(CTest)
     add_subdirectory(tests)
 endif()
