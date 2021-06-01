@@ -3,8 +3,7 @@
 ```
     $ mkdir build
     $ cd build
-    $ cmake ..
-
+    $ cmake .. -DBUILD_SHARED_LIBS=ON
 ```
 
 ## Building
@@ -14,7 +13,7 @@
 
 ## Installing
 ```
-    $ cmake --install . --prefix install-package
+    $ cmake --install . --prefix install-dir
 ```
 
 ## Testing
