@@ -16,9 +16,16 @@ target_link_libraries(BrownFox_BrownFox
         BrownFox::Body
 )
 
+include(GNUInstallDirs)
+file(RELATIVE_PATH relDir
+    ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}
+    ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}
+)
+
 set_target_properties(BrownFox_BrownFox PROPERTIES
     OUTPUT_NAME BrownFox
     EXPORT_NAME BrownFox
+    INSTALL_RPATH "$ORIGIN;$ORIGIN/${relDir}"
 )
 
 include(GNUInstallDirs)
