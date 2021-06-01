@@ -1,0 +1,2 @@
+include(${CMAKE_CURRENT_LIST_DIR}/BrownFox_Apps.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/BrownFox_Libs.cmake)
