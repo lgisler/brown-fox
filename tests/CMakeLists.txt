@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.14...3.18)
-
 include(FetchContent)
 
 FetchContent_Declare(googletest
@@ -20,11 +18,6 @@ add_executable(BrownFox::TestJump ALIAS BrownFox_TestJump)
 target_sources(BrownFox_TestJump
     PRIVATE
         test-jump.cc
-)
-
-target_include_directories(BrownFox_TestJump
-    PRIVATE
-        ${BrownFox_SOURCE_DIR}/app
 )
 
 target_link_libraries(BrownFox_TestJump
