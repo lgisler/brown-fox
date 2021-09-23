@@ -40,7 +40,7 @@ install(DIRECTORY ${BrownFox_SOURCE_DIR}/include/
 
 install(TARGETS BrownFox_Body
     EXPORT BrownFox_Libs
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/BrownFox
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/brown-fox
     COMPONENT BrownFox_Libs
 )
 
