@@ -14,9 +14,10 @@ target_include_directories(BrownFox_Body
         $<BUILD_INTERFACE:${BrownFox_SOURCE_DIR}/include>
 )
 
-set_target_properties(BrownFox_Body PROPERTIES
-    OUTPUT_NAME Body
-    EXPORT_NAME Body
+set_target_properties(BrownFox_Body 
+    PROPERTIES
+        OUTPUT_NAME Body
+        EXPORT_NAME Body
 )
 
 target_compile_features(BrownFox_Body
