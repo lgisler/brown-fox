@@ -13,7 +13,9 @@ option(INSTALL_GTEST "Enable installation of googletest" OFF)
 
 if(TEST_BROWNFOX OR (CMAKE_SOURCE_DIR STREQUAL BrownFox_SOURCE_DIR))
     include(CTest)
-    add_subdirectory(tests)
+    if(BUILD_TESTING)
+        add_subdirectory(tests)
+    endif()
 endif()
 
 include(GNUInstallDirs)
